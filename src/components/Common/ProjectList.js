@@ -1,0 +1,45 @@
+import { useSelector } from "react-redux";
+import ProjectListing from "./ProjectListing";
+import NewProject from "./Buttons/NewProject";
+import { Link } from "react-router-dom";
+
+const ProjectList = () => {
+  const my_projects = useSelector((store) => store.userData.my_projects);
+  // console.log(my_teams);
+  //   console.log(my_projects);
+  return (
+    <div className="p-2 lg:p-6 lg:pt-2 pt-2 lg:pl-10 h-1/2 text-sm lg:text-lg  relative flex flex-col">
+      <div className="lg:mb-2 flex flex-col lg:flex-row absolute h-[40px] w-full">
+        <h1 className="dark:text-gray-400 font-bold">Projects</h1>
+      </div>
+      {my_projects.length === 0 ? (
+        <div className="p-6 pt-2 pl-10 h-3/4 border-dashed border border-gray-300 flex justify-center items-center bg-gray-100 dark:bg-gray-800">
+          <NewProject
+            class={"dark:text-gray-200 border dark:border-gray-400 p-2"}
+            name={"Create your first project now."}
+          />
+        </div>
+      ) : (
+        <div className="flex max-h-full pt-[40px] flex-1">
+          <div className="rounded-md w-full h-full overflow-y-auto flex flex-col gap-1 lg:gap-2">
+            <div className="flex text-gray-600">
+              <div className="w-1/3">
+                <p>Name</p>
+              </div>
+              <div className="flex-1 flex justify-around">
+                {/* <p>Creator</p> */}
+                <p>Team</p>
+              </div>
+              <div className="w-1/5"></div>
+            </div>
+            {my_projects.map((item) => (
+              <ProjectListing key={item.id} data={item} />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ProjectList;

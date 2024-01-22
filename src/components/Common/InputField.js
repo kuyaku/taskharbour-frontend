@@ -4,6 +4,7 @@ const InputField = (props) => {
       <input
         type="submit"
         className="bg-blue-500 mt-3 text-white p-2 w-full rounded-sm font-semibold text-lg cursor-pointer"
+        onClick={props.onClick}
       />
     </div>
   ) : (

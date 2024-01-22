@@ -15,12 +15,18 @@ const ToggleMode = () => {
       {dark_mode ? (
         <div className="flex gap-2 items-center">
           {/* <Sun className="" /> */}
-          <ToggleRight onClick={handleModeSwitch} className="w-8 h-8" />
+          <ToggleRight
+            onClick={handleModeSwitch}
+            className="w-6  lg:w-8 h-6 lg:h-8"
+          />
           <Moon className="fill-white" />
         </div>
       ) : (
         <div className="flex gap-2 items-center">
-          <ToggleRight onClick={handleModeSwitch} className="w-8 h-8" />
+          <ToggleRight
+            onClick={handleModeSwitch}
+            className="lg:w-8 w-6 lg:h-8 h-6"
+          />
           <Sun className="fill-yellow-200" />
           {/* <Moon /> */}
         </div>

@@ -42,6 +42,28 @@ function createAPIClient(baseURL) {
       return data;
     },
 
+    register: async function (data) {
+      const registerResponse = await fetch(`${baseURL}auth/register/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!registerResponse.ok) {
+        if (registerResponse.status === 400) {
+          // bad request
+          const data = await registerResponse.json();
+          data.status = registerResponse.status;
+          return data;
+        }
+
+        throw new Error("Signup failed");
+      }
+      return await registerResponse.json();
+    },
+
     logout: () => {
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
@@ -112,9 +134,17 @@ function createAPIClient(baseURL) {
             await this.refreshToken();
             return this.post(url, data);
           }
+          if (response.status === 400) {
+            // bad request
+            const responseData = await response.json();
+            responseData.status = 400;
+            return responseData;
+          }
           throw new Error(`POST request failed: ${response.statusText}`);
         }
-        return await response.json();
+        const responseData = response.json();
+        responseData.status = 200;
+        return responseData;
       } catch (error) {
         throw new Error(`POST request failed: ${error.message}`);
       }
