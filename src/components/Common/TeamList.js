@@ -14,7 +14,7 @@ const TeamList = () => {
   const my_teams = useSelector((store) => store.userData.my_teams);
   return (
     <div className="p-2 lg:p-6 pt-2 lg:pl-10 h-1/2 flex flex-col relative">
-      <div className="lg:mb-2 flex flex-col lg:flex-row gap-1 lg:gap-6 lg:h-[40px] absolute w-full">
+      <div className="lg:mb-2 flex flex-col lg:flex-row gap-1 lg:gap-6 h-[50px] absolute w-full">
         <h1 className="dark:text-gray-400 font-bold text-sm lg:text-lg">
           Teams
         </h1>
@@ -30,7 +30,7 @@ const TeamList = () => {
         )}
       </div>
       {my_teams.length === 0 ? (
-        <div className="p-6 pt-2 pl-10 h-3/4 mt-1 border-dashed border border-gray-300 flex justify-center items-center bg-gray-100 dark:bg-gray-800 text-sm lg:text-lg">
+        <div className="p-6 pl-10 h-3/4 mt-[65px] border-dashed border border-gray-300 flex justify-center items-center bg-gray-100 dark:bg-gray-800 text-sm lg:text-lg">
           <NewTeam
             class={"dark:text-gray-200 border dark:border-gray-400 p-2"}
             name={"Create your first team"}

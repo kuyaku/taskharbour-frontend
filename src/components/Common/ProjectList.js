@@ -13,7 +13,7 @@ const ProjectList = () => {
         <h1 className="dark:text-gray-400 font-bold">Projects</h1>
       </div>
       {my_projects.length === 0 ? (
-        <div className="p-6 pt-2 pl-10 h-3/4 border-dashed border border-gray-300 flex justify-center items-center bg-gray-100 dark:bg-gray-800">
+        <div className="p-6 mt-[40px] pl-10 h-3/4 border-dashed border border-gray-300 flex justify-center items-center bg-gray-100 dark:bg-gray-800">
           <NewProject
             class={"dark:text-gray-200 border dark:border-gray-400 p-2"}
             name={"Create your first project now."}
