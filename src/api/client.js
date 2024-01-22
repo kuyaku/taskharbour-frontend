@@ -71,7 +71,7 @@ function createAPIClient(baseURL) {
     },
 
     refreshToken: async function () {
-      console.log("refreshing token!");
+      // console.log("refreshing token!");
       const refreshToken = this.getRefreshToken();
 
       if (!refreshToken) {

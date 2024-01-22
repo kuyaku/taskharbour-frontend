@@ -2,8 +2,6 @@ import NavItem from "./NavItem";
 import team from "../../assets/icons/team.svg";
 import dashboard from "../../assets/icons/dashboard.svg";
 import project from "../../assets/icons/project.svg";
-import NewProject from "./Buttons/NewProject";
-import NewTeam from "./Buttons/NewTeam";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ToggleMode from "./ToggleMode";

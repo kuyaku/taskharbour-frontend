@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 import { showModal } from "../../utils/appControlsSlice";
-import JoinRequest from "./Buttons/JoinRequest";
 import InviteButton from "./Buttons/InviteButton";
 
 const TeamListing = (props) => {

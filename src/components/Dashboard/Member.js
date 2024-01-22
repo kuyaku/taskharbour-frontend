@@ -3,7 +3,6 @@ import { getRandomColor, getUserInitials } from "../../utils/utilities";
 
 const Member = ({ data, user_is_admin }) => {
   const [showUsername, setShowUsername] = useState(true);
-  console.log(showUsername, user_is_admin);
   const { first_name, last_name, username, is_admin } = data;
   const color = getRandomColor();
   const userInitials = getUserInitials(username, first_name, last_name);

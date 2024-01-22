@@ -6,7 +6,7 @@ import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
 import Dashboard from "./components/Dashboard/Dashboard";
 import { useDispatch, useSelector } from "react-redux";
-import appControlsSlice, { changeDeviceSize } from "./utils/appControlsSlice";
+import { changeDeviceSize } from "./utils/appControlsSlice";
 import Kanban from "./components/Kanban/Kanban";
 import TeamPage from "./components/TeamPage/TeamPage";
 import ProjectPage from "./components/ProjectPage/ProjectPage";
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  console.log("rendering app");
+  // console.log("rendering app");
   const dispatch = useDispatch();
   const handleResize = () => {
     dispatch(changeDeviceSize(window.innerWidth));

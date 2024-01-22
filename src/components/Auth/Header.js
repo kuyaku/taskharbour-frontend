@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const user = useSelector((store) => store.auth.user);
-  console.log(user);
   return (
     <div className="flex justify-center  p-6">
       <div className="">

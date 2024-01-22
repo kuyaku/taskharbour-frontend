@@ -7,7 +7,6 @@ import NewTeam from "./Buttons/NewTeam";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutAsync } from "../../utils/authSlice";
-import UserAvatar from "./UserAvatar";
 
 const Sidenav = ({ device_size }) => {
   const current_page = useSelector((store) => store.appControl.current_page);

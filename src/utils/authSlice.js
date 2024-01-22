@@ -19,7 +19,7 @@ const initialState = {
 export const loginAsync = createAsyncThunk(
   "auth/login",
   async ({ email, password }) => {
-    console.log("Logging in using: ", email, password);
+    // console.log("Logging in using: ", email, password);
     const response = await client.login(email, password);
     // const response = await AuthService.login(email, password);
     return response;
@@ -52,14 +52,14 @@ const authSlice = createSlice({
     builder
       .addCase(loginAsync.rejected, (state) => {
         state.authStatus.login = "Error";
-        console.log("inside rejected login: error");
+        // console.log("inside rejected login: error");
       })
       .addCase(loginAsync.fulfilled, (state, action) => {
         state.accessToken = action.payload.access;
         state.refreshToken = action.payload.refresh;
         state.user = action.payload.user;
         state.authStatus.login = "Success";
-        console.log("inside fulfilled login: success");
+        // console.log("inside fulfilled login: success");
       })
       .addCase(logoutAsync.fulfilled, (state) => {
         state.accessToken = null;

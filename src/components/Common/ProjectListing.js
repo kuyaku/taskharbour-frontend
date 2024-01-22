@@ -5,7 +5,7 @@ import { showModal } from "../../utils/appControlsSlice";
 
 const ProjectListing = ({ data }) => {
   const dispatch = useDispatch();
-  const { id, title, creator, team } = data;
+  const { id, title, team } = data;
   const shortTitle = title.length > 20 ? title.slice(0, 20) + "..." : title;
   const shortTeam =
     team.name && team.name.length > 15

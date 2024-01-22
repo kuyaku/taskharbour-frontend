@@ -37,7 +37,7 @@ const TeamList = () => {
           />
         </div>
       ) : (
-        <div className="flex max-h-full pt-[45px] flex-1">
+        <div className="flex max-h-full pt-[65px] flex-1">
           <div className="rounded-md h-full w-full overflow-y-auto flex flex-col gap-1 lg:gap-2">
             <div className="flex text-gray-600">
               <div className="w-1/3">

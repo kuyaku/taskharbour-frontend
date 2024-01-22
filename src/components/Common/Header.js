@@ -1,4 +1,4 @@
-import { Menu, Settings, Table, User } from "react-feather";
+import { Menu, Settings } from "react-feather";
 import Logo from "./Logo";
 import ToggleMode from "./ToggleMode";
 import { useDispatch, useSelector } from "react-redux";

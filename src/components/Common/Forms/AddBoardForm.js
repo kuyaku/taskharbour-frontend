@@ -83,7 +83,6 @@ const AddBoardForm = ({ data }) => {
       color: selectedColor,
       people: selectedPeopleIds,
     };
-    console.log(data);
     dispatch(create_new_board({ project_id: id, data }));
   };
 
@@ -128,7 +127,7 @@ const AddBoardForm = ({ data }) => {
             </div>
           ))}
         <button
-          className="bg-blue-600 p-2 w-fit rounded-sm text-white"
+          className="bg-blue-600 p-2 w-fit rounded-sm text-gray-100"
           onClick={handleBoardFormSubmit}
         >
           Submit

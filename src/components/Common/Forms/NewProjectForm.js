@@ -78,7 +78,7 @@ const NewProjectForm = () => {
           handleTeamSelectChange={handleTeamSelectChange}
         />
         <button
-          className="bg-blue-600 p-2 w-fit rounded-sm"
+          className="bg-blue-600 p-2 w-fit rounded-sm text-gray-100"
           onClick={handleProjectFormSubmit}
         >
           Submit

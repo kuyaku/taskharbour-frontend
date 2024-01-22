@@ -1,34 +1,31 @@
 import { useEffect } from "react";
-import { XCircle } from "react-feather";
 import { useDispatch } from "react-redux";
 import { closeNotify } from "../../utils/userDataSlice";
 import { hideModal } from "../../utils/appControlsSlice";
 
-const Notify = (props) => {
+const Notify = ({ message, status }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       dispatch(closeNotify());
     }, 3000);
-    if (props.status) {
+    if (status) {
       dispatch(hideModal());
     }
   }, []);
 
-  let _class =
-    "min-w-[200px] flex items-end absolute top-2 left-1/2 z-50 p-2 px-4 gap-2 text-white flex-col rounded-md ";
-
-  if (props.status) {
-    _class += "bg-green-600";
-  } else {
-    _class += "bg-red-600";
-  }
-
   return (
-    <div className={_class}>
-      <div className="w-full flex justify-center">
-        <p className="">{props.message}</p>
+    <div
+      className={
+        "w-full flex flex-col items-center absolute top-2 z-50 p-2 px-4 gap-2 text-white"
+      }
+    >
+      <div
+        style={{ backgroundColor: status ? "#4CBB17" : "red" }}
+        className="max-w-[350px] min-w-[200px] flex justify-center rounded-md"
+      >
+        <p className="p-2 px-3 text-center">{message}</p>
       </div>
     </div>
   );

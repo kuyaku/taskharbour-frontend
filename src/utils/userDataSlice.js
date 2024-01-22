@@ -48,7 +48,7 @@ export const get_my_projects = createAsyncThunk(
 export const get_project = createAsyncThunk(
   "data/kanban",
   async (project_id) => {
-    console.log("fetching project");
+    // console.log("fetching project");
     const response = await client.get(`my_projects/${project_id}`);
     return response;
   }
@@ -316,7 +316,7 @@ const userDataSlice = createSlice({
         };
       })
       .addCase(create_new_card.fulfilled, (state, action) => {
-        console.log("response from card fulfilled");
+        // console.log("response from card fulfilled");
         console.log(action.payload);
         state.notify = {
           showNotification: true,
@@ -326,7 +326,7 @@ const userDataSlice = createSlice({
         state.force_reload.kanban_bottom = !state.force_reload.kanban_bottom;
       })
       .addCase(move_card.rejected, (state, action) => {
-        console.log("rejected", action.payload);
+        // console.log("rejected", action.payload);
         state.notify = {
           showNotification: true,
           status: false,
@@ -335,8 +335,8 @@ const userDataSlice = createSlice({
         state.force_reload.kanban_bottom = !state.force_reload.kanban_bottom;
       })
       .addCase(move_card.fulfilled, (state, action) => {
-        console.log("moving card");
-        console.log(action.payload);
+        // console.log("moving card");
+        // console.log(action.payload);
         if (action.payload.status === 400) {
           state.notify = {
             showNotification: true,

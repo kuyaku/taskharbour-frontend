@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import ProjectListing from "./ProjectListing";
 import NewProject from "./Buttons/NewProject";
-import { Link } from "react-router-dom";
 
 const ProjectList = () => {
   const my_projects = useSelector((store) => store.userData.my_projects);

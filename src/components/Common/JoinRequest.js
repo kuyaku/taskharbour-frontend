@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import client from "../../api/client";
+import { useEffect } from "react";
 import TimeAgo from "./TimeAgo";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -16,7 +15,6 @@ const JoinRequest = (props) => {
   const joinRequests = useSelector(
     (store) => store.userData.team_joining_requests
   );
-  console.log(joinRequests);
   const { id, name } = props.data;
 
   useEffect(() => {
@@ -31,7 +29,6 @@ const JoinRequest = (props) => {
   }
 
   const handleApproveRequest = (team_id, request_id) => {
-    console.log(team_id, request_id);
     dispatch(approve_join_request({ team_id, request_id }));
   };
 

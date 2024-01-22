@@ -74,7 +74,6 @@ const AddCardForm = ({ data }) => {
   const boardColors = BOARD_COLORS;
 
   const handleCardSubmit = (e) => {
-    console.log("submitting");
     e.preventDefault();
     if (name.length === 0 && description.length === 0) {
       setError({
