@@ -13,8 +13,8 @@ const MainSection = (props) => {
   const device_size = useSelector((store) => store.appControl.device_size);
   const dispatch = useDispatch();
   useEffect(() => {
-    // dispatch(get_my_teams());
-    // dispatch(get_my_projects());
+    dispatch(get_my_teams());
+    dispatch(get_my_projects());
   }, [reload]);
   return (
     <div className="h-screen flex flex-col">
