@@ -35,7 +35,7 @@ const Board = ({ data, is_admin, shimmer, team }) => {
     );
   }
   return (
-    <div className="border w-[350px] max-w-[400px] lg:min-h-[500px] min-w-[300px] lg:min-w-[350px] bg-white dark:bg-gray-800 dark:border-gray-700 rounded-md dark:text-gray-200 flex flex-col h-full">
+    <div className="border w-[300px] max-w-[400px] lg:min-h-[500px] min-w-[300px] lg:min-w-[350px] bg-white dark:bg-gray-800 dark:border-gray-700 rounded-md dark:text-gray-200 flex flex-col h-full">
       <div className="">
         <h1 className="p-2">
           {title}{" "}
