@@ -10,7 +10,6 @@ const Card = ({ data, project_id }) => {
   const dispatch = useDispatch();
   const ref = useRef(null);
   const { id, title, color, people, chips, created_at, position, board } = data;
-  console.log("card: ", title, position, id);
   const [, drag] = useDrag({
     type: "CARD",
     item: {
@@ -64,13 +63,6 @@ const Card = ({ data, project_id }) => {
       ) {
         return;
       }
-      console.log(
-        "coming from ",
-        item.originalIndex,
-        " going to ",
-        item.newPosition
-      );
-
       dispatch(move_card({ project_id: project_id, board_id: board, data }));
     },
   });

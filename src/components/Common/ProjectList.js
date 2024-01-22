@@ -4,10 +4,6 @@ import NewProject from "./Buttons/NewProject";
 
 const ProjectList = () => {
   const my_projects = useSelector((store) => store.userData.my_projects);
-  // my_projects = null;
-  if (!my_projects) {
-    console.log("projects are not loaded yet!");
-  }
 
   return (
     <div className="p-2 lg:p-6 lg:pt-2 pt-2 lg:pl-10 h-1/2 text-sm lg:text-lg  relative flex flex-col">
