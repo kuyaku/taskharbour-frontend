@@ -28,7 +28,10 @@ const Board = ({ data, is_admin, shimmer, team }) => {
 
   if (shimmer) {
     return (
-      <div className="lg:w-[350px] max-w-[400px] min-w-[250px] lg:min-w-[350px] border bg-white dark:bg-gray-800 dark:border-gray-700 rounded-md dark:text-gray-200 flex flex-col h-full"></div>
+      <div className="lg:w-[350px] max-w-[400px] min-w-[250px] lg:min-w-[350px] border bg-white dark:bg-gray-800 dark:border-gray-700 rounded-md dark:text-gray-200 flex flex-col h-full p-2 gap-2">
+        <div className="h-[130px] bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+        <div className="h-[130px] bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+      </div>
     );
   }
   return (

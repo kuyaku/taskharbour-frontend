@@ -7,9 +7,26 @@ import NewBoard from "../Common/Buttons/NewBoard";
 import { check_if_admin } from "../../utils/utilities";
 
 const KanbanTop = ({ project, is_admin }) => {
+  // project = null;
   // const dispatch = useDispatch();
   if (!project) {
-    return <div>Loading...</div>;
+    return (
+      <div className="h-[120px] p-6 flex flex-col gap-3">
+        <div className="flex">
+          <div className="flex-1">
+            <div className="h-8 lg:h-10 w-[200px] bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+          </div>
+          <div className="flex gap-4">
+            <div className="h-8 lg:w-[120px] w-0 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+            <div className="h-8 lg:w-[120px] w-[100px] bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+          </div>
+        </div>
+        <div className="flex gap-3">
+          <div className="h-6 lg:h-8 w-[120px] bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+          <div className="h-6 lg:h-8 w-[120px] bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+        </div>
+      </div>
+    );
   }
   const { title, team, creator } = project;
 

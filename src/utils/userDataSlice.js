@@ -3,8 +3,8 @@ import client from "../api/client";
 import { useDispatch } from "react-redux";
 
 const initialState = {
-  my_teams: [],
-  my_projects: [],
+  my_teams: null,
+  my_projects: null,
   project_boards: {
     count: 0,
     results: [],

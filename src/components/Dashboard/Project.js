@@ -78,11 +78,11 @@ const Project = ({ data }) => {
         ) : team.name ? (
           <div className="flex flex-col gap-4">
             <div className="flex">
-              <h3 className="text-gray-300 flex-1">
+              <h3 className="text-gray-600 dark:text-gray-300 flex-1">
                 Team:{" "}
-                <span className="text-xl text-gray-100">
+                <span className="text-xl text-gray-700 font-bold dark:text-gray-100">
                   {team.name}{" "}
-                  <span className="text-sm text-gray-300">
+                  <span className="text-sm text-gray-600 dark:text-gray-300">
                     {" "}
                     by{" "}
                     {team.created_by.username === user.username
@@ -91,6 +91,8 @@ const Project = ({ data }) => {
                   </span>
                 </span>
               </h3>
+            </div>
+            <div className="flex justify-end">
               {showAllMembers ? (
                 <button
                   className="flex"

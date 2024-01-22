@@ -4,14 +4,24 @@ import NewProject from "./Buttons/NewProject";
 
 const ProjectList = () => {
   const my_projects = useSelector((store) => store.userData.my_projects);
-  // console.log(my_teams);
-  //   console.log(my_projects);
+  // my_projects = null;
+  if (!my_projects) {
+    console.log("projects are not loaded yet!");
+  }
+
   return (
     <div className="p-2 lg:p-6 lg:pt-2 pt-2 lg:pl-10 h-1/2 text-sm lg:text-lg  relative flex flex-col">
       <div className="lg:mb-2 flex flex-col lg:flex-row absolute h-[40px] w-full">
         <h1 className="dark:text-gray-400 font-bold">Projects</h1>
       </div>
-      {my_projects.length === 0 ? (
+      {!my_projects ? (
+        <div className="mt-[50px] flex flex-col gap-1 lg:gap-2">
+          <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+          <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+          <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+          <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+        </div>
+      ) : my_projects.length === 0 ? (
         <div className="p-6 mt-[40px] pl-10 h-3/4 border-dashed border border-gray-300 flex justify-center items-center bg-gray-100 dark:bg-gray-800">
           <NewProject
             class={"dark:text-gray-200 border dark:border-gray-400 p-2"}
@@ -31,9 +41,10 @@ const ProjectList = () => {
               </div>
               <div className="w-1/5"></div>
             </div>
-            {my_projects.map((item) => (
-              <ProjectListing key={item.id} data={item} />
-            ))}
+            {my_projects &&
+              my_projects.map((item) => (
+                <ProjectListing key={item.id} data={item} />
+              ))}
           </div>
         </div>
       )}

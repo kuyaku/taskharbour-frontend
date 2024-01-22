@@ -4,7 +4,7 @@ import NewTeam from "./Buttons/NewTeam";
 import { useState } from "react";
 import JoinForm from "./Forms/JoinForm";
 
-const TeamList = () => {
+const TeamList = ({ shimmer }) => {
   const [showJoinForm, setShowJoinForm] = useState(false);
 
   const handleJoinButtonClick = () => {
@@ -29,7 +29,14 @@ const TeamList = () => {
           </button>
         )}
       </div>
-      {my_teams.length === 0 ? (
+      {!my_teams ? (
+        <div className="mt-[60px] flex flex-col gap-1 lg:gap-2">
+          <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+          <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+          <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+          <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+        </div>
+      ) : my_teams && my_teams.length === 0 ? (
         <div className="p-6 pl-10 h-3/4 mt-[65px] border-dashed border border-gray-300 flex justify-center items-center bg-gray-100 dark:bg-gray-800 text-sm lg:text-lg">
           <NewTeam
             class={"dark:text-gray-200 border dark:border-gray-400 p-2"}
@@ -48,9 +55,8 @@ const TeamList = () => {
               </div>
               <div className="w-1/5"></div>
             </div>
-            {my_teams.map((item) => (
-              <TeamListing key={item.id} data={item} />
-            ))}
+            {my_teams &&
+              my_teams.map((item) => <TeamListing key={item.id} data={item} />)}
           </div>
         </div>
       )}

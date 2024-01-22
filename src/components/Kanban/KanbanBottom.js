@@ -24,7 +24,7 @@ const KanbanBottom = ({ project, is_admin, team }) => {
           <>
             <Board shimmer={true} data={{}} is_admin={is_admin} team={{}} />
             <Board shimmer={true} data={{}} is_admin={is_admin} team={{}} />
-            <Board shimmer={true} data={{}} is_admin={is_admin} team={{}} />
+            {/* <Board shimmer={true} data={{}} is_admin={is_admin} team={{}} /> */}
           </>
         )}
         {boards?.results.map((item) => (
